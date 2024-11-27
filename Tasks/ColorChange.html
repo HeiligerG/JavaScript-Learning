@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ColorChage</title>
+</head>
+<body>
+    <section class="Block">
+        <h3>Farben ändern</h3>
+        <h5 class="h5bg" >Hintergrundfarbe <input onclick="changeColorBG()" id="bgcolor" type="color"></h5>
+        <h5 class="h5font">Schriftfarbe <input onclick="changeColorFont()" id="fontcolor" type="color"> </h5>
+
+        <script>
+            function changeColorBG() {
+                const colorPicker = document.getElementById("bgcolor");
+
+                colorPicker.addEventListener('input', (event) => {
+                    const selectedColor = event.target.value;
+                    document.body.style.backgroundColor = selectedColor;
+                });
+            }
+
+            function changeColorFont() {
+                const colorPicker = document.getElementById("fontcolor");
+
+                colorPicker.addEventListener('input', (event) => {
+                    const selectedColor = event.target.value;
+                    document.body.style.color = selectedColor;
+                });
+            }
+        </script>
+
+    </section>
+</body>
+</html>
