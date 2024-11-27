@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aufgabenliste</title>
+</head>
+<body>
+
+<script src="script.js"></script>
+
+<h1>Aufgabenliste</h1>
+
+<input type="text" id="neueAufgabe" placeholder="Neue Aufgabe eingeben">
+<button id="hinzufügenButton">Aufgabe hinzufügen</button>
+
+<ul id="aufgaben">
+    <li>Aufgabe 1 <a href="#">erledigt</a></li>
+    <li>Aufgabe 2 <a href="#">erledigt</a></li>
+    <li>Aufgabe 3 <a href="#">erledigt</a></li>
+</ul>
+
+<button id="abhakenButton">Alles erledigt!</button>
+
+<script>
+hinzufügenAufgabe();
+streicheAufgabe();
+</script>
+
+</body>
+</html>
