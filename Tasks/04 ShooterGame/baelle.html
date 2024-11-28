@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-	<title>DOM</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ballerspiel</title>
+	<style>
+		#baelle {
+			display: flex;
+			gap: 20px;
+			margin: 20px 0;
+		}
+		img {
+			cursor: pointer;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
 </head>
 <body>
-	<h1 id="ueberschrift">Bälle abschiessen</h1>
-	<p>Klicke auf einen Ball, um ihn abzuschiessen.</p>
-	<img src="ball.png" id="ball1" />
-	<img src="ball.png" id="ball2" />
-	<img src="ball.png" id="ball3" />
-	<img src="ball.png" id="ball4" />
+<h1 id="ueberschrift">Bälle abschießen</h1>
+<p>Klicke auf einen Ball, um ihn abzuschießen.</p>
+
+<section id="baelle">
+	<img src="ball.png" alt="Ball" class="ball">
+	<img src="ball.png" alt="Ball" class="ball">
+	<img src="ball.png" alt="Ball" class="ball">
+	<img src="ball.png" alt="Ball" class="ball">
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>
-
