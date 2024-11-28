@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notiz Brett</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Notizen</h1>
+
+    <form id="noteForm" class="note-form">
+        <div class="input-group">
+            <input type="text"
+                   id="noteInput"
+                   placeholder="Neue Notiz eingeben..."
+                   required>
+            <button type="submit">Hinzufügen</button>
+        </div>
+    </form>
+
+    <div id="notesList" class="notes-list">
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
