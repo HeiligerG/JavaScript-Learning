@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Bestellung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<script src="script.js"></script>
+
+<h1>Ticket Bestellung</h1>
+
+<form id="ticketForm" action="https://formlog.offline.ch/log" method="POST">
+    <div class="form-group">
+        <label for="email">E-Mail Adresse:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" class="error">
+            Bitte geben Sie eine gültige E-Mail Adresse ein.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="tickets">Anzahl Tickets (max. 2):</label>
+        <select id="tickets" name="tickets" required>
+            <option value="">Bitte wählen</option>
+            <option value="1">1 Ticket</option>
+            <option value="2">2 Tickets</option>
+        </select>
+        <div id="ticketsError" class="error">
+            Bitte wählen Sie aus, wieviele Tickets sie bestellen möchten.
+        </div>
+    </div>
+
+    <button type="submit">Tickets bestellen</button>
+</form>
+</body>
+</html>
