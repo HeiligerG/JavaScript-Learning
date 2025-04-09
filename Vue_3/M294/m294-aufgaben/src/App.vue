@@ -12,4 +12,8 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 }
+
+:webkit-scrollbar {
+ display: none;
+}
 </style>
