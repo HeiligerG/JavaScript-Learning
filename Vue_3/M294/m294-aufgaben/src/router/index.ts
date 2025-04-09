@@ -4,6 +4,7 @@ import Aufgabe01 from '../pages/01_sng.vue'
 import Aufgabe02 from '../pages/02_ws.vue'
 import Aufgabe03 from '../pages/03_ir.vue'
 import Aufgabe04 from '../pages/04_todo.vue'
+import Aufgabe05 from '../pages/05_component.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -30,6 +31,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'aufgabe-04',
         name: 'Aufgabe04',
         component: Aufgabe04
+      },
+      {
+        path: 'aufgabe-05',
+        name: 'Aufgabe05',
+        component: Aufgabe05
       }
       // Hier könnten weitere Routen für deine anderen Seiten im 'pages'-Ordner folgen
     ]

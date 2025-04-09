@@ -9,8 +9,9 @@
       <router-link to="/aufgabe-02" class="nav-link">Aufgabe 02</router-link>
       <router-link to="/aufgabe-03" class="nav-link">Aufgabe 03</router-link>
       <router-link to="/aufgabe-04" class="nav-link">Aufgabe 04</router-link>
+      <router-link to="/aufgabe-05" class="nav-link">Aufgabe 05</router-link>
     </nav>
-    
+  
     <main class="aufgaben-container">
       <router-view></router-view>
     </main>
