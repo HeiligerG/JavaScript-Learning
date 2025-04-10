@@ -17,14 +17,14 @@ const props = defineProps({
     required: true}
 });
 
-const emit = defineEmits(['voteUp', 'voteDown']);
+const emit = defineEmits(['vote-up', 'vote-down']);
 
 function handleVoteUp() {
-  emit('voteUp', props.id);
+  emit('vote-up', props.id);
 }
 
 function handleVoteDown() {
-  emit('voteDown', props.id);
+  emit('vote-down', props.id);
 }
 
 </script>
@@ -32,13 +32,13 @@ function handleVoteDown() {
 <template>
   <div class="post">
     <div class="post__votes voter">
-      <button @click="handleUpVote" class="voter__action">
+      <button @click="handleVoteUp" class="voter__action">
         👍
-      </button >
+      </button>
       <div class="voter__votes">
         {{ votes }}
       </div>
-      <button @click="handleDownVote" class="voter__action">
+      <button @click="handleVoteDown" class="voter__action">
         👎
       </button>
     </div>
@@ -61,6 +61,14 @@ function handleVoteDown() {
   display: flex;
   padding: 20px;
   border: 2px solid transparent;
+  border-radius: 8px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.post:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
 .post--trending {
@@ -73,7 +81,7 @@ function handleVoteDown() {
 }
 
 .post + .post {
-  border-top: 1px solid #fafafa;
+  border-top: 1px solid #f0f0f0;
 }
 
 .post__user {
@@ -83,20 +91,24 @@ function handleVoteDown() {
 }
 
 .post__title {
-  font-size: 1rem;
-  line-height: 1.1;
+  font-size: 1.1rem;
+  line-height: 1.3;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .post__text {
   color: #666;
-  line-height: 1.2;
+  line-height: 1.4;
   font-size: .9rem;
 }
 
+.post__content {
+  flex: 1;
+}
+
 .post__votes {
-  width: 40px;
+  width: 50px;
   margin-right: 20px;
   display: flex;
   flex-shrink: 0;
@@ -105,26 +117,50 @@ function handleVoteDown() {
 }
 
 .voter__votes {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.voter__votes--positive {
+  color: #4caf50;
+}
+
+.voter__votes--negative {
+  color: #f44336;
 }
 
 .voter__action {
   appearance: none;
-  background: none;
+  background: #f5f5f5;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  font-size: 1.3rem;
-  transition: background .2s ease;
-  width: 30px;
-  height: 30px;
+  font-size: 1.2rem;
+  transition: all .2s ease;
+  width: 36px;
+  height: 36px;
   border-radius: 100%;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-.voter__action:hover {
-  background: #f0f0f0;
+.voter__action--up:hover {
+  background: #e8f5e9;
+  transform: translateY(-2px);
+}
+
+.voter__action--down:hover {
+  background: #ffebee;
+  transform: translateY(2px);
+}
+
+.voter__action:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
 }
 </style>
