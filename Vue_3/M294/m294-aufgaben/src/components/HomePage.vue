@@ -11,6 +11,7 @@
       <router-link to="/aufgabe-04" class="nav-link">Aufgabe 04</router-link>
       <router-link to="/aufgabe-05" class="nav-link">Aufgabe 05</router-link>
       <router-link to="/aufgabe-06" class="nav-link">Aufgabe 06</router-link>
+      <router-link to="/aufgabe-07" class="nav-link">Aufgabe 07</router-link>
     </nav>
   
     <main class="aufgaben-container">

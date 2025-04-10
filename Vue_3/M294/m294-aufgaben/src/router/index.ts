@@ -6,6 +6,7 @@ import Aufgabe03 from '../pages/03_ir.vue'
 import Aufgabe04 from '../pages/04_todo.vue'
 import Aufgabe05 from '../pages/05_component.vue'
 import Aufgabe06 from '../pages/06_dataflow.vue'
+import Aufgabe07 from '../pages/07_slots.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -42,6 +43,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'aufgabe-06',
         name: 'Aufgabe06',
         component: Aufgabe06
+      },
+      {
+        path: 'aufgabe-07',
+        name: 'Aufgabe07',
+        component: Aufgabe07
       }
     ]
   }
