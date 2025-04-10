@@ -7,6 +7,7 @@ import Aufgabe04 from '../pages/04_todo.vue'
 import Aufgabe05 from '../pages/05_component.vue'
 import Aufgabe06 from '../pages/06_dataflow.vue'
 import Aufgabe07 from '../pages/07_slots.vue'
+import Aufgabe08 from '../pages/08_routezugriff.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -48,6 +49,23 @@ const routes: Array<RouteRecordRaw> = [
         path: 'aufgabe-07',
         name: 'Aufgabe07',
         component: Aufgabe07
+      },
+      {
+        path: 'aufgabe-08',
+        name: 'Aufgabe08',
+        component: Aufgabe08,
+        beforeEnter: (to, from, next) => {
+          const currentMinutes = new Date().getMinutes();
+          const evenMinutes = currentMinutes % 2 === 0;
+          
+          if (evenMinutes) { 
+            console.log('Zugriff erlaubt');
+            next();
+          } else {
+            console.log('ZUGRIFF VERWEIGERT!');
+            next('/');
+          }
+        }
       }
     ]
   }

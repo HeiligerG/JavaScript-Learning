@@ -1,14 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, markRaw } from 'vue'
 import Gallery from '../components/gallery/Gallery.vue';
 import GalleryImage from '../components/gallery/GalleryImage.vue';
 import GalleryVideo from '../components/gallery/GalleryVideo.vue';
 import GalleryAudio from '../components/gallery/GalleryAudio.vue';
 
 const components = ref({
-  image: GalleryImage,
-  video: GalleryVideo,
-  audio: GalleryAudio
+  image: markRaw(GalleryImage),
+  video: markRaw(GalleryVideo),
+  audio: markRaw(GalleryAudio)
 });
 
 const galleries = ref([

@@ -3,7 +3,7 @@
     <header>
       <h1>Willkommen zu deinen Aufgaben</h1>
     </header>
-    
+
     <nav class="navigation">
       <router-link to="/aufgabe-01" class="nav-link">Aufgabe 01</router-link>
       <router-link to="/aufgabe-02" class="nav-link">Aufgabe 02</router-link>
@@ -12,8 +12,9 @@
       <router-link to="/aufgabe-05" class="nav-link">Aufgabe 05</router-link>
       <router-link to="/aufgabe-06" class="nav-link">Aufgabe 06</router-link>
       <router-link to="/aufgabe-07" class="nav-link">Aufgabe 07</router-link>
+      <router-link to="/aufgabe-08" class="nav-link">Aufgabe 08</router-link>
     </nav>
-  
+
     <main class="aufgaben-container">
       <router-view></router-view>
     </main>

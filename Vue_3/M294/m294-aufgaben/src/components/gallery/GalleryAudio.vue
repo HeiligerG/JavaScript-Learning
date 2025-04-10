@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { markRaw } from 'vue';
 
 const props = defineProps({
   src: {

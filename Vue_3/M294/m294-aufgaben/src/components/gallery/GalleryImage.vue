@@ -1,4 +1,6 @@
 <script setup>
+import { markRaw } from 'vue';
+
 defineProps({
     src: {
         type: String,
