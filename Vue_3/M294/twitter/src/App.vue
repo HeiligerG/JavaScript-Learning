@@ -2,83 +2,20 @@
 import IconLogin from './components/icons/IconLogin.vue'
 import IconHome from './components/icons/IconHome.vue'
 import IconSparkles from './components/icons/IconSparkles.vue'
+import Logo from './components/Logo.vue'
+import Nav from './components/Navigation.vue'
+
 </script>
 
 <template>
   <div class="container">
     <div class="grid">
       <aside class="sidebar sidebar--left">
-        <!-- Logo -->
-        <div class="logo">
-          Tw<strong>IT</strong>ter
-        </div>
-
-        <!-- Navigation -->
-        <nav class="nav">
-          <a href="#" class="router-link-active">
-            <IconHome/>
-            Stream
-          </a>
-          <a href="#">
-            <IconLogin/>
-            Login
-          </a>
-        </nav>
+        <Logo></Logo>
+        <Nav></Nav>
       </aside>
       <main class="content">
-
-        <!-- Login Info -->
-        <section class="login-info">
-          <div class="login-info__icon">
-            <IconSparkles/>
-          </div>
-          <div class="login-info__content">
-            <h2 class="login-info__heading">
-              Du bist nicht angemeldet
-            </h2>
-            <div class="login-info__action">
-              <a href="#" class="btn btn--transparent">
-                Zum Login &nbsp; &rarr;
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Composer -->
-        <form class="composer">
-          <label class="composer__prompt">Was geht?</label>
-          <textarea maxlength="160" class="composer__textarea" placeholder="Verfasse einen Tweet..."/>
-          <div class="composer__actions">
-            <div class="composer__stats stats">
-              <span class="stats__counter">0</span>
-              <span class="stats__max">/ 160</span>
-            </div>
-            <button disabled class="btn btn--primary">
-              Tweet veröffentlichen
-            </button>
-          </div>
-        </form>
-
-        <!-- Stream -->
-        <section class="stream">
-          <!-- Tweet -->
-          <div class="tweet" v-for="tweet in [1, 2, 3, 4, 5, 6, 7, 8, 9 ]">
-            <div class="tweet__avatar">
-              <img :src="`https://i.pravatar.cc/100?u=${tweet}`" alt=""/>
-            </div>
-            <div class="tweet__content">
-              <div class="tweet__header">
-                <span class="tweet__author">Max Mustermann</span>
-                <span class="tweet__timestamp">vor 1 Minute</span>
-              </div>
-              <div class="tweet__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam
-                tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nunc vel nunc. Sed euismod, nunc ut
-                aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nunc vel nunc.
-              </div>
-            </div>
-          </div>
-        </section>
+        <RouterView />
       </main>
 
       <aside class="sidebar sidebar--right">
