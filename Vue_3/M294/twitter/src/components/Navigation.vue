@@ -14,10 +14,7 @@ const { isLoggedIn, logout } = useAuth()
       <IconHome />
       Home
     </RouterLink>
-    <RouterLink to="/stream">
-      Stream
-    </RouterLink>
-    <RouterLink to="/login" v-if="!isLoggedIn">
+    <RouterLink to="/login" v-if="!isLoggedIn" class="login-link">
       <IconLogin />
       Login
     </RouterLink>
