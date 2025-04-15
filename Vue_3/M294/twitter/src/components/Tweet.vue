@@ -1,4 +1,5 @@
 <script setup>
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 const defineProps =  defineProps({
     user: {
       Object,
@@ -25,7 +26,11 @@ const defineProps =  defineProps({
             <div class="tweet__content">
               <div class="tweet__header">
                 <span class="tweet__author">{{ user.name }}</span>
-                <span class="tweet__timestamp">{{ createdAt }}</span>
+                <span class="tweet__timestamp">
+                  {{ (new Date() - new Date(createdAt)) < 3600000
+                    ? formatDistance(new Date(createdAt), new Date(), { addSuffix: true, unit: 'minute' })
+                    : formatDistance(new Date(createdAt), new Date(), { addSuffix: true }) }}
+                </span>
               </div>
               <div class="tweet__text">
                 {{ text }}

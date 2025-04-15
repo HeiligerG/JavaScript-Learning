@@ -2,10 +2,11 @@
 </script>
 
 <template>
-    <!-- Logo -->
-    <div class="logo">
-        Tw<strong>IT</strong>ter
-    </div>
+  <div class="logo">
+    <RouterLink to="/">
+      <slot></slot>
+    </RouterLink>
+  </div>
 </template>
 
 <style></style>
