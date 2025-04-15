@@ -4,6 +4,7 @@ import IconHome from './components/icons/IconHome.vue'
 import IconSparkles from './components/icons/IconSparkles.vue'
 import Logo from './components/Logo.vue'
 import Nav from './components/Navigation.vue'
+import Widget from './components/Widget.vue'
 
 </script>
 
@@ -19,12 +20,7 @@ import Nav from './components/Navigation.vue'
       </main>
 
       <aside class="sidebar sidebar--right">
-        <!-- Top User Widget -->
-        <section class="widget">
-          <h2 class="widget__heading">
-            Top User
-          </h2>
-
+        <Widget title="Top User">
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
               <a href="#">
@@ -37,14 +33,9 @@ import Nav from './components/Navigation.vue'
               </a>
             </li>
           </ul>
-        </section>
+        </Widget>
 
-        <!-- Neue User Widget -->
-        <section class="widget">
-          <h2 class="widget__heading">
-            Neue User
-          </h2>
-
+        <Widget title="New Users">
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
               <a href="#">
@@ -57,7 +48,7 @@ import Nav from './components/Navigation.vue'
               </a>
             </li>
           </ul>
-        </section>
+        </Widget>
       </aside>
     </div>
   </div>
