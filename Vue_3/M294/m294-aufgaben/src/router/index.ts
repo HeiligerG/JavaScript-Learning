@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomePage from '../components/HomePage.vue'
+import Home from '../pages/00_HomePage.vue'
 import Aufgabe01 from '../pages/01_sng.vue'
 import Aufgabe02 from '../pages/02_ws.vue'
 import Aufgabe03 from '../pages/03_ir.vue'
@@ -15,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: HomePage,
     children: [
+      {
+        path: '/',
+        name: 'Dashboard',
+        component: Home
+      },
       {
         path: 'aufgabe-01',
         name: 'Aufgabe01',
