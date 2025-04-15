@@ -1,11 +1,10 @@
 <script setup>
-const defineProps = defineProps({
+const props = defineProps({
     title: {
         type: String,
         required: true
     }
 });
-
 </script>
 
 <template>
@@ -15,7 +14,7 @@ const defineProps = defineProps({
             {{ title }}
           </h2>
         <slot />
-        </section>
+    </section>
 </template>
 
 <style>
