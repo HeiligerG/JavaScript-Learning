@@ -3,13 +3,21 @@ import LoginInfo from '../components/LoginInfo.vue'
 import Composer from '../components/Composer.vue'
 import Tweet from '../components/Tweet.vue'
 import { onMounted, ref } from 'vue'
-import { fetchStream } from '../api/requests'
+import { fetchStream, checkAuth } from '../api/requests'
+import { useAuth } from '../api/auth'
 
 const loading = ref(true)
 const tweets = ref([])
+const { isLoggedIn } = useAuth()
 
 onMounted(() => {
     console.log('HomeView mounted')
+})
+
+onMounted(async () => {
+  const response = await checkAuth()
+  
+  console.log('checkAuth Resultat', response)
 })
 
 onMounted(async () => {
@@ -34,9 +42,9 @@ onMounted(async () => {
 </script>
 
 <template>
-<LoginInfo></LoginInfo>
+<LoginInfo v-if="!isLoggedIn"></LoginInfo>
 
-<Composer></Composer>
+<Composer v-if="isLoggedIn"></Composer>
 
 <!-- Stream -->
 <section class="stream">
