@@ -85,7 +85,6 @@ const handleLike = async () => {
 
 <style>
 .tweet {
-  border-bottom: 1px solid #e6ecf0;
   padding: 15px;
   display: flex;
 }
