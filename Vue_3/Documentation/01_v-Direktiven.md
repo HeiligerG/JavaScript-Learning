@@ -132,7 +132,7 @@ Anwendungsbeispiel:
 ```
 
 Der Gedankengang in der Praxis wäre: 
-*"Ich möchte die Begrüßung nur zeigen, wenn der Benutzer eingeloggt ist. Dafür nutze ich die Variable 'eingeloggt' aus meinem data-Objekt und wende v-if darauf an."*
+*"Ich möchte die Begrüssung nur zeigen, wenn der Benutzer eingeloggt ist. Dafür nutze ich die Variable 'eingeloggt' aus meinem data-Objekt und wende v-if darauf an."*
 
 ### *v-else*
 
@@ -169,7 +169,7 @@ Anwendungsbeispiel:
 ```
 
 Der Gedankengang in der Praxis wäre: 
-*"Ich möchte zwei verschiedene Inhalte je nach Anmeldestatus anzeigen. Wenn 'eingeloggt' wahr ist, zeige ich eine Begrüßung, andernfalls zeige ich stattdessen einen Anmeldehinweis. Mit v-else muss ich keine Negation der Bedingung schreiben, sondern erhalte automatisch den alternativen Fall."*
+*"Ich möchte zwei verschiedene Inhalte je nach Anmeldestatus anzeigen. Wenn 'eingeloggt' wahr ist, zeige ich eine Begrüssung, andernfalls zeige ich stattdessen einen Anmeldehinweis. Mit v-else muss ich keine Negation der Bedingung schreiben, sondern erhalte automatisch den alternativen Fall."*
 
 ### *v-else-if*
 
@@ -300,7 +300,7 @@ export default {
 ```
 
 Der Gedankengang in der Praxis wäre: 
-*"Ich benötige ein Eingabefeld, dessen Wert sofort mit meiner 'benutzername'-Variable synchronisiert wird. Mit v-model verbinde ich beides miteinander, sodass jede Änderung im Textfeld automatisch meine Variable aktualisiert und jede programmgesteuerte Änderung der Variable automatisch im Textfeld angezeigt wird. So kann ich den eingegebenen Namen direkt im Begrüßungstext verwenden."*
+*"Ich benötige ein Eingabefeld, dessen Wert sofort mit meiner 'benutzername'-Variable synchronisiert wird. Mit v-model verbinde ich beides miteinander, sodass jede Änderung im Textfeld automatisch meine Variable aktualisiert und jede programmgesteuerte Änderung der Variable automatisch im Textfeld angezeigt wird. So kann ich den eingegebenen Namen direkt im Begrüssungstext verwenden."*
 
 ### *v-show*
 
@@ -448,7 +448,7 @@ Anwendungsbeispiel:
     <p>Hauptinhalt der Seite</p>
   </template>
   <template #footer>
-    <p>Fußzeile</p>
+    <p>Fusszeile</p>
   </template>
 </BaseLayout>
 ```
@@ -479,7 +479,7 @@ Dies ist der Gedankengang speziell für die Verwendung von `v-pre` in Vue.js:
    - Nützlich zum Anzeigen von Vue-Syntax als Rohtext (z.B. in Dokumentationen)
 
 5. **Leistungsoptimierung beachten**:
-   - Kann in großen Templates für statische Inhalte verwendet werden
+   - Kann in grossen Templates für statische Inhalte verwendet werden
    - Beschleunigt das Rendering, da Vue keine Auswertung dieser Bereiche vornehmen muss
 
 Anwendungsbeispiel:
@@ -517,7 +517,7 @@ Dies ist der Gedankengang speziell für die Verwendung von `v-cloak` in Vue.js:
 5. **Anwendungsfall beachten**:
    - Besonders nützlich bei Anwendungen ohne Build-System oder bei langsamen Verbindungen
    - Weniger relevant bei Single-Page Applications mit Bundlern wie Webpack
-   - Meist auf Wurzelelemente oder große Sektionen angewendet
+   - Meist auf Wurzelelemente oder grosse Sektionen angewendet
 
 Anwendungsbeispiel:
 ```javascript
@@ -542,7 +542,7 @@ Dies ist der Gedankengang speziell für die Verwendung von `v-once` in Vue.js:
 
 1. **Identifizieren statischer Inhalte**: 
    - Welche Elemente sollen nur einmal gerendert werden und sich später nicht mehr ändern?
-   - Beispiel: "Eine Begrüßungsnachricht soll sich nicht ändern, auch wenn sich die zugrundeliegenden Daten ändern"
+   - Beispiel: "Eine Begrüssungsnachricht soll sich nicht ändern, auch wenn sich die zugrundeliegenden Daten ändern"
 
 2. **Statische/dynamische Teile trennen**:
    - Welche Teile der Anwendung sind wirklich statisch, nachdem sie initial gerendert wurden?
@@ -555,12 +555,12 @@ Dies ist der Gedankengang speziell für die Verwendung von `v-once` in Vue.js:
 4. **Performance-Optimierung verstehen**:
    - Mit `v-once` wird Vue angewiesen, das Element nur einmal zu rendern
    - Bei nachfolgenden Datenänderungen wird das Element nicht mehr aktualisiert
-   - Spart Ressourcen bei großen statischen Inhalten
+   - Spart Ressourcen bei grossen statischen Inhalten
 
 5. **Anwendungsfall beachten**:
    - Nützlich für Inhalte, die garantiert statisch bleiben
    - Vorsicht bei bedingten Inhalten: Der Status zum Zeitpunkt des ersten Renderns wird "eingefroren"
-   - Wird oft für Optimierungen in Listen oder großen Templates verwendet
+   - Wird oft für Optimierungen in Listen oder grossen Templates verwendet
 
 Anwendungsbeispiel:
 ```javascript

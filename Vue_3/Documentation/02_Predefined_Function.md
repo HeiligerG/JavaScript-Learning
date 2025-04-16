@@ -103,7 +103,7 @@ onMounted(async () => {
     daten.value = await antwort.json()
     ladeStatus.value = 'Daten geladen'
     
-    // Starte ein Intervall, das regelmäßig etwas aktualisiert
+    // Starte ein Intervall, das regelmässig etwas aktualisiert
     zeitintervall = setInterval(() => {
       console.log('Aktualisiere...')
     }, 5000)
@@ -133,7 +133,7 @@ onBeforeUnmount(() => {
 ```
 
 Der Gedankengang in der Praxis wäre: 
-*"Ich benötige Daten von einer API, sobald meine Komponente im DOM dargestellt wird. Mit onMounted kann ich genau den richtigen Zeitpunkt dafür abfangen. Außerdem starte ich ein Intervall für regelmäßige Aktualisierungen. Da ich auch weiß, dass ich dieses Intervall bereinigen muss, wenn die Komponente entfernt wird, verwende ich onBeforeUnmount, um dies sicherzustellen. So verhindere ich Speicherlecks und unerwünschte Hintergrundprozesse."*
+*"Ich benötige Daten von einer API, sobald meine Komponente im DOM dargestellt wird. Mit onMounted kann ich genau den richtigen Zeitpunkt dafür abfangen. Ausserdem starte ich ein Intervall für regelmässige Aktualisierungen. Da ich auch weiss, dass ich dieses Intervall bereinigen muss, wenn die Komponente entfernt wird, verwende ich onBeforeUnmount, um dies sicherzustellen. So verhindere ich Speicherlecks und unerwünschte Hintergrundprozesse."*
 
 ### *Reactivity API*
 
@@ -240,8 +240,8 @@ Dies ist der Gedankengang speziell für die Verwendung von Komponenten & Mountin
 
 2. **Komponentendefinition einrichten**:
    - `defineComponent()`: Für TypeScript-Unterstützung und bessere IDE-Integration
-   - `defineProps()`: Für die Deklaration von Eigenschaften, die von außen übergeben werden
-   - `defineEmits()`: Für die Deklaration von Events, die nach außen gesendet werden
+   - `defineProps()`: Für die Deklaration von Eigenschaften, die von aussen übergeben werden
+   - `defineEmits()`: Für die Deklaration von Events, die nach aussen gesendet werden
    - Beispiel: 
      ```javascript
      const props = defineProps(['label', 'variant'])
@@ -352,7 +352,7 @@ function renderDynamicComponent() {
 ```
 
 Der Gedankengang in der Praxis wäre: 
-*"Ich erstelle eine wiederverwendbare Button-Komponente, die verschiedene Varianten unterstützen soll. Mit defineProps() definiere ich alle Eigenschaften, die von außen übergeben werden können, wie Label und Variante. Mit defineEmits() lege ich fest, welche Events meine Komponente nach außen sendet, wie Click- und Focus-Events. Interne Logik wie der aktive Zustand bleibt in der Komponente gekapselt. Für Fälle, in denen die übergeordnete Komponente auf meine Button-Komponente zugreifen muss, verwende ich defineExpose(), um bestimmte Methoden wie focus() freizugeben. Bei der App-Initialisierung verwende ich createApp() und mount(), um meine Anwendung mit dem DOM zu verbinden. Für dynamische Komponenten nutze ich h() und resolveComponent(), was besonders nützlich ist, wenn Komponententypen erst zur Laufzeit bekannt sind."*
+*"Ich erstelle eine wiederverwendbare Button-Komponente, die verschiedene Varianten unterstützen soll. Mit defineProps() definiere ich alle Eigenschaften, die von aussen übergeben werden können, wie Label und Variante. Mit defineEmits() lege ich fest, welche Events meine Komponente nach aussen sendet, wie Click- und Focus-Events. Interne Logik wie der aktive Zustand bleibt in der Komponente gekapselt. Für Fälle, in denen die übergeordnete Komponente auf meine Button-Komponente zugreifen muss, verwende ich defineExpose(), um bestimmte Methoden wie focus() freizugeben. Bei der App-Initialisierung verwende ich createApp() und mount(), um meine Anwendung mit dem DOM zu verbinden. Für dynamische Komponenten nutze ich h() und resolveComponent(), was besonders nützlich ist, wenn Komponententypen erst zur Laufzeit bekannt sind."*
 
 ### *Provide / Inject*
 
@@ -443,14 +443,14 @@ const textClass = computed(() => {
 <template>
   <div :class="textClass">
     <p>Aktuelles Theme: {{ theme }}</p>
-    <p>Aktuelle Schriftgröße: {{ fontSize }}</p>
+    <p>Aktuelle Schriftgrösse: {{ fontSize }}</p>
     
     <button @click="toggleTheme">Theme wechseln</button>
     
     <select @change="e => setFontSize(e.target.value)">
       <option value="small">Klein</option>
       <option value="medium">Mittel</option>
-      <option value="large">Groß</option>
+      <option value="large">Gross</option>
     </select>
   </div>
 </template>
@@ -629,4 +629,4 @@ button {
 ```
 
 Der Gedankengang in der Praxis wäre: 
-*"Ich entwickle eine Komponente mit einem Canvas für Datenvisualisierung und einem Textarea für Notizen. Um die Chart-Bibliothek zu initialisieren, benötige ich direkten Zugriff auf das Canvas-DOM-Element, wofür ich eine Template-Ref verwende. Nach dem Mounting der Komponente kann ich das Canvas-Element referenzieren und den Rendering-Kontext abrufen. Außerdem möchte ich das Textarea-Element automatisch fokussieren, sobald die Komponente geladen ist. Für dynamische Styling-Änderungen nutze ich useCssVars, um reaktive CSS-Variablen zu definieren, die sich ändern, wenn das Theme wechselt. Wenn sich die Chart-Daten aktualisieren, verwende ich nextTick, um sicherzustellen, dass ich erst auf den Chart zugreife, nachdem Vue das DOM aktualisiert hat. Mit useAttrs() kann ich auch undeklarierte Attribute auffangen und an das Textarea-Element weiterleiten, was die Komponente flexibler macht."*
+*"Ich entwickle eine Komponente mit einem Canvas für Datenvisualisierung und einem Textarea für Notizen. Um die Chart-Bibliothek zu initialisieren, benötige ich direkten Zugriff auf das Canvas-DOM-Element, wofür ich eine Template-Ref verwende. Nach dem Mounting der Komponente kann ich das Canvas-Element referenzieren und den Rendering-Kontext abrufen. Ausserdem möchte ich das Textarea-Element automatisch fokussieren, sobald die Komponente geladen ist. Für dynamische Styling-Änderungen nutze ich useCssVars, um reaktive CSS-Variablen zu definieren, die sich ändern, wenn das Theme wechselt. Wenn sich die Chart-Daten aktualisieren, verwende ich nextTick, um sicherzustellen, dass ich erst auf den Chart zugreife, nachdem Vue das DOM aktualisiert hat. Mit useAttrs() kann ich auch undeklarierte Attribute auffangen und an das Textarea-Element weiterleiten, was die Komponente flexibler macht."*
